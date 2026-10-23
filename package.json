@@ -2,20 +2,38 @@
   "name": "browl-plugin-copy",
   "version": "0.1.0",
   "description": "Browl plugin that copies files from the repo config directory to the instance work directory",
-  "private": true,
+  "keywords": [
+    "browl",
+    "browl-plugin",
+    "deploy",
+    "copy",
+    "credentials"
+  ],
   "engines": {
     "node": ">=12"
   },
   "main": "index.js",
-  "license": "UNLICENSED",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/now-here/browl-plugin-copy#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/now-here/browl-plugin-copy.git"
   },
+  "bugs": {
+    "url": "https://github.com/now-here/browl-plugin-copy/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint lib test index.js",
     "test": "NODE_ENV=test mocha",
-    "coverage": "nyc --reporter=html --reporter=text npm run test"
+    "coverage": "nyc --reporter=html --reporter=text npm run test",
+    "prepublishOnly": "npm run lint && npm test"
   },
   "nyc": {
     "all": true,
